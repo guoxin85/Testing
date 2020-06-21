@@ -1,9 +1,14 @@
-<h1>HAHAhahehdaasdfe</h1>
+<h1>Test App Items</h1>
 <br>
-  <%= @testapp_items.inspect %>
-<br>
-  <% @testapp_items.each { |item| %>
+  <p> <%= @testItems.inspect %> </p>
+
+  <%= link_to "Create new test items", new_testapp_path %>
+
+  <% @testItems.each { |item| %>
   <h3> <%= item.title %> </h3>
   <p> <%= item.body %> </p>
+  <%= link_to "Show", testapp_path(item.id) %>
+  <%= link_to "Edit", edit_testapp_path(item.id) %>
+  <%= link_to 'Delete', testapp_path(item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% } %>
 <br>
