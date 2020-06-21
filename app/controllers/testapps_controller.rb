@@ -4,10 +4,6 @@ class TestappsController < ApplicationController
     @testItems = Testapp.all
   end
 
-  def show
-    @testItem = Testapp.find(params[:id])
-  end
-
   def new
     @testItem = Testapp.new
   end
@@ -39,7 +35,11 @@ class TestappsController < ApplicationController
     end
   end
 
-def destroy
+  def show
+    @testItem = Testapp.find(params[:id])
+  end
+
+  def destroy
     @testItem = Testapp.find(params[:id])
 
     @testItem.destroy

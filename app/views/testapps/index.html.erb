@@ -1,14 +1,18 @@
 <h1>Test App Items</h1>
 <br>
+  <h3> Inspect database </h3>
   <p> <%= @testItems.inspect %> </p>
+  <br>
+  <h3> <%= link_to "Create New Test App Items", new_testapp_path %> </h3>
+  <br>
+  
 
-  <%= link_to "Create new test items", new_testapp_path %>
-
-  <% @testItems.each { |item| %>
-  <h3> <%= item.title %> </h3>
-  <p> <%= item.body %> </p>
+  <% reverseArray = @testItems.reverse %>
+  <% reverseArray.each { |item| %>
+  <h4> Title: <%= item.title %> </h4>
+  <p> Body: <%= item.body %> </p>
   <%= link_to "Show", testapp_path(item.id) %>
   <%= link_to "Edit", edit_testapp_path(item.id) %>
   <%= link_to 'Delete', testapp_path(item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br><br>
   <% } %>
-<br>
