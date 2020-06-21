@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :testapps
   get 'welcome/home'
   get 'welcome/about'
   get 'welcome/contact'
