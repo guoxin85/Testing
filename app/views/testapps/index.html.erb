@@ -6,9 +6,7 @@
   <h3> <%= link_to "Create New Test App Items", new_testapp_path %> </h3>
   <br>
   
-
-  <% reverseArray = @testItems.reverse %>
-  <% reverseArray.each { |item| %>
+  <% @testItems.reverse.each { |item| %>
   <h4> Title: <%= item.title %> </h4>
   <p> Body: <%= item.body %> </p>
   <%= link_to "Show", testapp_path(item.id) %>
