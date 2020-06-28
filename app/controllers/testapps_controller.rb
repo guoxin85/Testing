@@ -48,4 +48,8 @@ class TestappsController < ApplicationController
     end
   end
 
+  def testparameter
+    @items = params[:item]
+  end
+
 end
